@@ -70,6 +70,7 @@ function Login() {
         sessionStorage.setItem('id', user.id);
         sessionStorage.setItem('fName', user.f_name);
         sessionStorage.setItem('lName', user.l_name);
+        sessionStorage.setItem('permissions', JSON.stringify(user.permissions || []));
         navigate('/dashboard');
       } else {
         setError(response.data.message || 'Invalid credentials');
@@ -307,4 +308,4 @@ function Login() {
   );
 }
 
-export default Login;
+export default Login;
